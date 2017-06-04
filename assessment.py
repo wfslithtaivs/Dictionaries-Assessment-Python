@@ -210,12 +210,12 @@ def kids_game(names):
     words_by_first_letter = {}
 
     # store set of words starts
-    set_of_starting_chars = {word[0] for word in names}
+    set_of_starting_chars = set(word[0] for word in names)
 
     # create dictionary of starting letterts with corresponding list of words
     for char in set_of_starting_chars:
         words_by_first_letter[char] = words_by_first_letter.get(char, []) + [w for w in names if w[0] == char]
-    
+
     # append output phrase until out of options
     while True:
         # set current key to last char of last word in the phrase
